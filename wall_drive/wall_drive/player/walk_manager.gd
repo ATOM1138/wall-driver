@@ -77,5 +77,5 @@ func _input(event: InputEvent) -> void:
 		player.rotate_y(-event.relative.x * mouse_sensitivity)
 
 		# Pitch
-		pitch = clamp(pitch - event.relative.y * mouse_sensitivity, deg_to_rad(-80), deg_to_rad(80))
-		camera_pivot.rotation.x = pitch
+		#pitch = clamp(pitch - event.relative.y * mouse_sensitivity, deg_to_rad(-80), deg_to_rad(80))
+		#camera_pivot.rotation.x = pitch
