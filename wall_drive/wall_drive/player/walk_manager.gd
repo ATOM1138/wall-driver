@@ -1,4 +1,6 @@
-extends CharacterBody3D
+extends Node
+class_name WalkManager
+
 
 @export var speed: float = 5.0
 @export var jump_velocity: float = 6.0
@@ -11,7 +13,9 @@ extends CharacterBody3D
 @export var camera_tilt_speed: float = 6.0    # how fast the tilt interpolates
 
 var pitch: float = 0.0
-@onready var camera_pivot: Node3D = $CameraPivot
+@export var camera_pivot: Node3D
+
+@export var player: Player
 
 
 func _ready() -> void:
@@ -19,37 +23,41 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Gravity
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	# Check if in walking state, early return to reduce nesting
+	if player.state != Player.States.WALK:
+		return
+	
+		# Gravity
+	if not player.is_on_floor():
+		player.velocity.y -= gravity * delta
 
 	# Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-
+	if Input.is_action_just_pressed("jump") and player.is_on_floor():
+		player.velocity.y = jump_velocity
+	
 	# Movement input (NO normalization)
 	var input_vec = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("back") - Input.get_action_strength("forward")
+		Input.get_axis("walk_left", "walk_right"),
+		Input.get_axis("walk_forward", "walk_back"),
 	)
-
-	# Local to world direction
-	var direction = (transform.basis * Vector3(input_vec.x, 0, input_vec.y))
-
+	
 	# Pick accel based on grounded/airborne
 	var accel: float
-	if is_on_floor():
+	if player.is_on_floor():
 		accel = ground_acceleration
 	else:
 		accel = air_acceleration
 
+	# Local to world direction
+	var direction = (player.transform.basis * Vector3(input_vec.x, 0, input_vec.y))
+
 	# Target velocity (no normalization, full speed stacking on diagonals)
 	var target_velocity = direction * speed
 
-	velocity.x = lerp(velocity.x, target_velocity.x, accel * delta)
-	velocity.z = lerp(velocity.z, target_velocity.z, accel * delta)
+	player.velocity.x = lerp(player.velocity.x, target_velocity.x, accel * delta)
+	player.velocity.z = lerp(player.velocity.z, target_velocity.z, accel * delta)
 
-	move_and_slide()
+	player.move_and_slide()
 
 	# --- CAMERA SWAY ---
 	var tilt_target = Vector3.ZERO
@@ -66,7 +74,7 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		# Yaw
-		rotate_y(-event.relative.x * mouse_sensitivity)
+		player.rotate_y(-event.relative.x * mouse_sensitivity)
 
 		# Pitch
 		pitch = clamp(pitch - event.relative.y * mouse_sensitivity, deg_to_rad(-80), deg_to_rad(80))

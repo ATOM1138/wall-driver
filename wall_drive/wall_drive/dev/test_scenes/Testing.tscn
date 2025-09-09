@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://eon7rwn7ue8e"]
+
+[ext_resource type="PackedScene" uid="uid://ci80ckqmvts7q" path="res://wall_drive/player/Player.tscn" id="1_njgoq"]
+[ext_resource type="Material" uid="uid://4eigj21tnp7r" path="res://wall_drive/dev/materials/dev_white.tres" id="2_bjes6"]
+[ext_resource type="Script" uid="uid://6chu0a0omr8w" path="res://wall_drive/items/freeze_zone.gd" id="3_bjes6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jfumx"]
+material = ExtResource("2_bjes6")
+size = Vector2(2000, 2000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jfumx"]
+size = Vector3(2000, 0.1, 2000)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dcthj"]
+
+[sub_resource type="Sky" id="Sky_jfumx"]
+sky_material = SubResource("ProceduralSkyMaterial_dcthj")
+
+[sub_resource type="Environment" id="Environment_mi8y1"]
+background_mode = 2
+sky = SubResource("Sky_jfumx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_njgoq"]
+bounce = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_njgoq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bjes6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t12jm"]
+size = Vector3(5, 5, 5)
+
+[node name="ItemTest" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_njgoq")]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_jfumx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
+shape = SubResource("BoxShape3D_jfumx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mi8y1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.219846, -0.858936, 0.462489, 0, 0.474088, 0.880477, -0.975535, 0.19357, -0.104226, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ball" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -4)
+physics_material_override = SubResource("PhysicsMaterial_njgoq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ball"]
+shape = SubResource("SphereShape3D_njgoq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ball"]
+mesh = SubResource("SphereMesh_bjes6")
+
+[node name="FreezeTest" type="Area3D" parent="." node_paths=PackedStringArray("default_parent")]
+script = ExtResource("3_bjes6")
+default_parent = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FreezeTest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+shape = SubResource("BoxShape3D_t12jm")

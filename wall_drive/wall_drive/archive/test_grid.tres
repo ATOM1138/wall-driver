@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemGrid" load_steps=2 format=3 uid="uid://bbrfjbbg6doco"]
+
+[ext_resource type="Script" uid="uid://dnt6o461w6ism" path="res://wall_drive/archive/item_grid.gd" id="1_xfiy0"]
+
+[resource]
+script = ExtResource("1_xfiy0")
+size = Vector3i(0, 0, 0)
+offset = Vector3i(0, 0, 0)
+subtractions = Array[ExtResource("1_xfiy0")]([])
+metadata/_custom_type_script = "uid://dnt6o461w6ism"

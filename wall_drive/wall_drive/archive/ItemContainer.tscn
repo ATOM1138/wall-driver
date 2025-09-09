@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ri6lhrjryluo"]
+
+[ext_resource type="Script" uid="uid://w7j8jmjp0n26" path="res://wall_drive/archive/item_container.gd" id="1_b7xo0"]
+
+[node name="ItemContainer" type="Node3D"]
+script = ExtResource("1_b7xo0")
