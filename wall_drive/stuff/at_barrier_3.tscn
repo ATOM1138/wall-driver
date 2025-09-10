@@ -1,0 +1,925 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl8qkj1wkw13m"]
+
+[ext_resource type="PackedScene" uid="uid://dypccqq177pih" path="res://stuff/AT_barrier_3.fbx" id="1_ratp7"]
+[ext_resource type="LightmapGIData" uid="uid://b3knsn6c1k66k" path="res://stuff/at_barrier_3.lmbake" id="2_frmyk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frmyk"]
+diffuse_mode = 1
+
+[sub_resource type="PointMesh" id="PointMesh_ratp7"]
+
+[sub_resource type="Environment" id="Environment_frmyk"]
+
+[node name="AT_barrier_3" instance=ExtResource("1_ratp7")]
+
+[node name="AC_box" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Bunkersheet_gibs" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Bunkersheet_gibs_001" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Bunkersheet_gibs_002" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Bunkersheet_gibs_003" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cable" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Circle" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Circle_001" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Circle_002" parent="." index="8"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Computer_giblet_150" parent="." index="9"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cube" parent="." index="10"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cube_002" parent="." index="11"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cube_003" parent="." index="12"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cube_004" parent="." index="13"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cube_005" parent="." index="14"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cube_006" parent="." index="15"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Cube_007" parent="." index="16"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash" parent="." index="17"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_001" parent="." index="18"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_002" parent="." index="19"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_003" parent="." index="20"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_004" parent="." index="21"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_005" parent="." index="22"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_006" parent="." index="23"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_007" parent="." index="24"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_008" parent="." index="25"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_009" parent="." index="26"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_010" parent="." index="27"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_011" parent="." index="28"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_012" parent="." index="29"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_013" parent="." index="30"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_014" parent="." index="31"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_015" parent="." index="32"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_016" parent="." index="33"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_017" parent="." index="34"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Decals_trash_026" parent="." index="35"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door" parent="." index="36"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_001" parent="." index="37"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_002" parent="." index="38"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_003" parent="." index="39"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_004" parent="." index="40"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_005" parent="." index="41"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_006" parent="." index="42"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_007" parent="." index="43"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_008" parent="." index="44"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_009" parent="." index="45"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_010" parent="." index="46"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_011" parent="." index="47"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_012" parent="." index="48"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_013" parent="." index="49"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_014" parent="." index="50"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_015" parent="." index="51"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_016" parent="." index="52"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_017" parent="." index="53"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Door_018" parent="." index="54"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Ibeam-geonode_002" parent="." index="56"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_BrokenTile_01_1x2" parent="." index="57"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_BrokenTile_01_1x2_001" parent="." index="58"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_BrokenTile_01_1x2_002" parent="." index="59"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_BrokenTile_01_1x2_003" parent="." index="60"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_BrokenTile_01_1x2_004" parent="." index="61"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_BrokenTile_01_1x2_005" parent="." index="62"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01" parent="." index="63"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_001" parent="." index="64"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_002" parent="." index="65"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_003" parent="." index="66"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_004" parent="." index="67"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_005" parent="." index="68"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_006" parent="." index="69"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_007" parent="." index="70"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_008" parent="." index="71"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_009" parent="." index="72"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_010" parent="." index="73"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_011" parent="." index="74"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_012" parent="." index="75"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_013" parent="." index="76"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Catwalk_Rail_2x2_01_014" parent="." index="77"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_ClosedVent" parent="." index="78"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Container_02" parent="." index="79"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Control_Panel_01" parent="." index="80"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_001" parent="." index="81"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_002" parent="." index="82"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_006" parent="." index="83"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_007" parent="." index="84"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_008" parent="." index="85"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_009" parent="." index="86"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_010" parent="." index="87"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_IndustrialKOP_011" parent="." index="88"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Light_1x2_03" parent="." index="89"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Light_Habitation_1x1_01" parent="." index="90"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Pipe_01" parent="." index="91"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Pipe_01_Curved" parent="." index="92"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Pipe_01_Curved_001" parent="." index="93"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Pipe_01_Curved_002" parent="." index="94"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Pipe_01_Curved_003" parent="." index="95"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Pipe_01_Curved_004" parent="." index="96"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Pipe_01_Curved_005" parent="." index="97"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_ProbeShaft" parent="." index="98"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Rollupdoor_01" parent="." index="99"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Rollupdoor_01_001" parent="." index="100"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Structure_01" parent="." index="101"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Vent_1x6_02" parent="." index="102"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Vent_Structure_01" parent="." index="103"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_Vent_Structure_01_001" parent="." index="104"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="L_WideCrate_01_001" parent="." index="105"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp" parent="." index="106"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_001" parent="." index="107"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_002" parent="." index="108"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_003" parent="." index="109"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_004" parent="." index="110"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_005" parent="." index="111"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_006" parent="." index="112"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_007" parent="." index="113"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_008" parent="." index="114"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_009" parent="." index="115"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_010" parent="." index="116"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Lamp_011" parent="." index="117"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Letter_o_003" parent="." index="118"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Machinery boxes_001" parent="." index="119"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Machinery boxes_002" parent="." index="120"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_001" parent="." index="121"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, -3.7988, 17.477, 0.321387)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_002" parent="." index="122"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, -24.381, 20.0308, 0.957547)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_003" parent="." index="123"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, -2.65829, 18.8097, 2.78909)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_004" parent="." index="124"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, -0.893425, 27.6114, -4.99176)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_005" parent="." index="125"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, 1.0833, 7.93077, -24.9952)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_006" parent="." index="126"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_007" parent="." index="127"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, -2.15649, 12.4308, 10.9683)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_008" parent="." index="128"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, -7.67794, 11.6295, 9.5215)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_009" parent="." index="129"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Plane_010" parent="." index="130"]
+transform = Transform3D(-4.37114e-06, 100, 4.37114e-06, 0, -4.37114e-06, 100, 100, 4.37114e-06, 1.91069e-13, -8.16779, 13.1581, 9.18444)
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="Point" parent="." index="131"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Point_001" parent="." index="132"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Point_002" parent="." index="133"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Point_003" parent="." index="134"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Point_004" parent="." index="135"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Point_005" parent="." index="136"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Point_006" parent="." index="137"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Point_007" parent="." index="138"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot" parent="." index="139"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_001" parent="." index="140"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_002" parent="." index="141"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_003" parent="." index="142"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_004" parent="." index="143"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_005" parent="." index="144"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_006" parent="." index="145"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_007" parent="." index="146"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_008" parent="." index="147"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_009" parent="." index="148"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_010" parent="." index="149"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_011" parent="." index="150"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_012" parent="." index="151"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_013" parent="." index="152"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_014" parent="." index="153"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_015" parent="." index="154"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_016" parent="." index="155"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_017" parent="." index="156"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="Spot_018" parent="." index="157"]
+visible = false
+light_energy = 3.67
+light_negative = true
+light_bake_mode = 1
+
+[node name="boxes stack" parent="." index="158"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="boxes stack_001" parent="." index="159"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="fence" parent="." index="162"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="fence_002" parent="." index="163"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="greeble_box" parent="." index="164"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="greeble_box_001" parent="." index="165"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="greeble_box_002" parent="." index="166"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="greeble_box_003" parent="." index="167"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="greeble_box_004" parent="." index="168"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="greeble_box_005" parent="." index="169"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_bar_rope" parent="." index="170"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic-collide_ladder_01_001" parent="." index="171"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic-collide_ladder_01_002" parent="." index="172"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic-collide_ladder_01_003" parent="." index="173"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic-collide_ladder_01_004" parent="." index="174"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_001" parent="." index="175"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_002" parent="." index="176"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_003" parent="." index="177"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_004" parent="." index="178"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_005" parent="." index="179"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_006" parent="." index="180"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_007" parent="." index="181"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_008" parent="." index="182"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_009" parent="." index="183"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_010" parent="." index="184"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_011" parent="." index="185"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_012" parent="." index="186"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_013" parent="." index="187"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_014" parent="." index="188"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_015" parent="." index="189"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_016" parent="." index="190"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_017" parent="." index="191"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_018" parent="." index="192"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_019" parent="." index="193"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_020" parent="." index="194"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_03_021" parent="." index="195"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04" parent="." index="196"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_001" parent="." index="197"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_002" parent="." index="198"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_003" parent="." index="199"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_004" parent="." index="200"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_005" parent="." index="201"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_006" parent="." index="202"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_007" parent="." index="203"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_008" parent="." index="204"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_009" parent="." index="205"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_010" parent="." index="206"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_011" parent="." index="207"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_012" parent="." index="208"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_013" parent="." index="209"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_014" parent="." index="210"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_015" parent="." index="211"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_016" parent="." index="212"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_017" parent="." index="213"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_018" parent="." index="214"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_019" parent="." index="215"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_04_020" parent="." index="216"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05" parent="." index="217"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_001" parent="." index="218"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_002" parent="." index="219"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_003" parent="." index="220"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_004" parent="." index="221"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_005" parent="." index="222"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_006" parent="." index="223"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_007" parent="." index="224"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_008" parent="." index="225"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handhold_basic_05_009" parent="." index="226"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="handholds_basic_level" parent="." index="227"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+mesh = SubResource("PointMesh_ratp7")
+
+[node name="lamppost box" parent="." index="228"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="mirror_greeble_1_001" parent="." index="229"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="mirror_greeble_2_002" parent="." index="230"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="mirror_greeble_2_003" parent="." index="231"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="mirror_greeble_2_004" parent="." index="232"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="mirror_greeble_2_005" parent="." index="233"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="node-geonode_002" parent="." index="234"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="piston_2" parent="." index="235"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="piston_2_001" parent="." index="236"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="piston_3" parent="." index="237"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="piston_3_001" parent="." index="238"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="piston_3_case" parent="." index="239"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="piston_3_case_001" parent="." index="240"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="procedural_truss_001" parent="." index="241"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="procedural_truss_002" parent="." index="242"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="procedural_truss_003" parent="." index="243"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="procedural_truss_004" parent="." index="244"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="procedural_truss_005" parent="." index="245"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_001" parent="." index="246"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_002" parent="." index="247"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_003" parent="." index="248"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_004" parent="." index="249"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_005" parent="." index="250"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_006" parent="." index="251"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_007" parent="." index="252"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_008" parent="." index="253"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_009" parent="." index="254"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="rock_010" parent="." index="255"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_001" parent="." index="256"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_002" parent="." index="257"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_003" parent="." index="258"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_004" parent="." index="259"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_005" parent="." index="260"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_006" parent="." index="261"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_007" parent="." index="262"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_008" parent="." index="263"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_009" parent="." index="264"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="textured_pannel_010" parent="." index="265"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="thingaboob" parent="." index="266"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="transformator" parent="." index="267"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="vent_cap" parent="." index="268"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="wall_greebly_001" parent="." index="269"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="wall_greebly_002" parent="." index="270"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="wall_greebly_003" parent="." index="271"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="wall_greebly_004" parent="." index="272"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="wall_greebly_005" parent="." index="273"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="wall_greebly_006" parent="." index="274"]
+material_override = SubResource("StandardMaterial3D_frmyk")
+
+[node name="LightmapGI" type="LightmapGI" parent="." index="276"]
+light_data = ExtResource("2_frmyk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="277"]
+environment = SubResource("Environment_frmyk")

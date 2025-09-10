@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv4p8sj6idswm"]
+
+[ext_resource type="PackedScene" uid="uid://bvfsvno5nsjtt" path="res://stuff/Volkswagen Golf Mk1_game.blend" id="1_2fbd0"]
+[ext_resource type="Material" uid="uid://dxf6kvf3bf7ue" path="res://car_vw.tres" id="2_yrv3q"]
+[ext_resource type="Material" uid="uid://x8qjaki7oqey" path="res://glass_car_vw.tres" id="3_xcwvs"]
+[ext_resource type="Texture2D" uid="uid://cmxfxx2i8lng6" path="res://stuff/Steering Wheel_Bake1_PBR_Diffuse.png" id="4_bl6j6"]
+[ext_resource type="Material" uid="uid://fbe28ac0kfio" path="res://wheel_vw.tres" id="5_g2mqo"]
+[ext_resource type="Texture2D" uid="uid://c0ec41nu672d8" path="res://stuff/Steering Wheel_Bake1_PBR_Ambient Occlusion.png" id="5_kkr3y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2mqo"]
+albedo_texture = ExtResource("4_bl6j6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm5mp"]
+albedo_texture = ExtResource("4_bl6j6")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("5_kkr3y")
+texture_filter = 0
+
+[node name="Volkswagen Golf Mk1_game" instance=ExtResource("1_2fbd0")]
+
+[node name="Volskwagen Golf Mk1" parent="." index="0"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+
+[node name="Door FL" parent="Volskwagen Golf Mk1/Skeleton3D" index="0"]
+transform = Transform3D(1, 1.78074e-07, -7.82311e-08, -1.20634e-07, 1, -3.98592e-08, 1.00583e-07, -1.39467e-08, 1, 0.734805, 0.619885, 0.715816)
+
+[node name="Door FL" parent="Volskwagen Golf Mk1/Skeleton3D/Door FL" index="0"]
+material_override = ExtResource("2_yrv3q")
+
+[node name="Window FL" parent="Volskwagen Golf Mk1/Skeleton3D" index="1"]
+transform = Transform3D(1, 1.78074e-07, -7.82311e-08, -1.20634e-07, 1, -3.98592e-08, 1.00583e-07, -1.39467e-08, 1, 0.649313, 1.09487, 0.132951)
+
+[node name="Window FL" parent="Volskwagen Golf Mk1/Skeleton3D/Window FL" index="0"]
+material_override = ExtResource("3_xcwvs")
+
+[node name="Door FR" parent="Volskwagen Golf Mk1/Skeleton3D" index="2"]
+transform = Transform3D(1, -1.78074e-07, 7.82311e-08, 1.20634e-07, 1, -3.98592e-08, -1.00583e-07, -1.39467e-08, 1, -0.734806, 0.619885, 0.715816)
+
+[node name="Door FR" parent="Volskwagen Golf Mk1/Skeleton3D/Door FR" index="0"]
+material_override = ExtResource("2_yrv3q")
+
+[node name="Window FR" parent="Volskwagen Golf Mk1/Skeleton3D" index="3"]
+transform = Transform3D(1, -1.78074e-07, 7.82311e-08, 1.20634e-07, 1, -3.98592e-08, -1.00583e-07, -1.39467e-08, 1, -0.649313, 1.09487, 0.132951)
+
+[node name="Window FR" parent="Volskwagen Golf Mk1/Skeleton3D/Window FR" index="0"]
+material_override = ExtResource("3_xcwvs")
+
+[node name="Wheel BL" parent="Volskwagen Golf Mk1/Skeleton3D" index="4"]
+transform = Transform3D(1, -3.28682e-08, -4.9007e-14, 3.28682e-08, 1, -3.28682e-08, -4.9007e-14, 3.28682e-08, 1, 0.6945, 0.370363, -1.08082)
+
+[node name="Wheel BL" parent="Volskwagen Golf Mk1/Skeleton3D/Wheel BL" index="0"]
+transform = Transform3D(1, 1.42109e-14, -3.04932e-20, -1.42109e-14, 1, 0, 1.01644e-20, 0, 1, 0, -0.0353661, -0.246191)
+material_override = ExtResource("5_g2mqo")
+
+[node name="Wheel BR" parent="Volskwagen Golf Mk1/Skeleton3D" index="5"]
+transform = Transform3D(-1, 3.28682e-08, -5.96047e-08, -2.67364e-08, 1, -8.63411e-08, 1.19209e-07, -2.67365e-08, -1, -0.6945, 0.291, -1.2)
+
+[node name="Wheel BR" parent="Volskwagen Golf Mk1/Skeleton3D/Wheel BR" index="0"]
+transform = Transform3D(1, 2.68281e-14, 0, 1.10236e-14, 1, 0, 2.84217e-14, 0, 1, 0, 0.0495248, 0.126764)
+material_override = ExtResource("5_g2mqo")
+
+[node name="Back Window" parent="Volskwagen Golf Mk1/Skeleton3D" index="6"]
+transform = Transform3D(1, 7.10543e-15, 7.10543e-15, -2.84217e-14, 1, 5.96046e-08, 1.42109e-14, 2.98023e-08, 1, 1.06145e-14, 1.08977, -1.4524)
+
+[node name="Back Window" parent="Volskwagen Golf Mk1/Skeleton3D/Back Window" index="0"]
+material_override = ExtResource("3_xcwvs")
+
+[node name="Trunk Lid" parent="Volskwagen Golf Mk1/Skeleton3D" index="7"]
+transform = Transform3D(1, 7.10543e-15, 7.10543e-15, -2.84217e-14, 1, 5.96046e-08, 1.42109e-14, 2.98023e-08, 1, 1.42665e-14, 1.34462, -1.19327)
+
+[node name="Trunk Lid" parent="Volskwagen Golf Mk1/Skeleton3D/Trunk Lid" index="0"]
+material_override = ExtResource("2_yrv3q")
+
+[node name="Steering Wheel" parent="Volskwagen Golf Mk1/Skeleton3D" index="8"]
+transform = Transform3D(1, -1.66474e-08, -2.69501e-08, 1.94414e-08, 1, 1.49012e-07, 2.86964e-08, 4.76837e-07, 1, 0.312004, 0.832726, 0.413489)
+
+[node name="Steering Wheel" parent="Volskwagen Golf Mk1/Skeleton3D/Steering Wheel" index="0"]
+material_override = SubResource("StandardMaterial3D_g2mqo")
+
+[node name="Wheel FL" parent="Volskwagen Golf Mk1/Skeleton3D" index="9"]
+transform = Transform3D(1, -3.28682e-08, 8.94069e-08, 3.06591e-09, 1, -1.52078e-07, -1.19209e-07, 1.22275e-07, 1, 0.6945, 0.291, 1.2)
+
+[node name="Wheel FL" parent="Volskwagen Golf Mk1/Skeleton3D/Wheel FL" index="0"]
+transform = Transform3D(1, -2.74101e-16, -2.84217e-14, -8.09579e-16, 1, 0, 0, 0, 1, 0, 0.0384625, 0.1182)
+material_override = ExtResource("5_g2mqo")
+
+[node name="Wheel FR" parent="Volskwagen Golf Mk1/Skeleton3D" index="10"]
+transform = Transform3D(-1, 3.28682e-08, -4.5452e-14, 3.28682e-08, 1, 3.28683e-08, 1.15638e-14, 3.28682e-08, -1, -0.6945, 0.291, 1.2)
+
+[node name="Wheel FR" parent="Volskwagen Golf Mk1/Skeleton3D/Wheel FR" index="0"]
+transform = Transform3D(1, 1.52944e-21, -3.38813e-21, -7.10543e-15, 1, -7.10543e-15, 0, 0, 1, 0, 0.0364771, -0.112817)
+material_override = ExtResource("5_g2mqo")
+
+[node name="Hood_2" parent="Volskwagen Golf Mk1/Skeleton3D" index="11"]
+transform = Transform3D(1, 2.27374e-13, 2.27374e-13, -4.54747e-13, 1, -2.08616e-07, -1.7053e-13, 2.38419e-07, 1, 1.30629e-14, 0.910289, 0.863802)
+
+[node name="Hood_2" parent="Volskwagen Golf Mk1/Skeleton3D/Hood_2" index="0"]
+material_override = ExtResource("2_yrv3q")
+
+[node name="Door BL" parent="Volskwagen Golf Mk1/Skeleton3D" index="12"]
+transform = Transform3D(1, 1.19124e-07, 2.13273e-07, -1.19334e-07, 1, -1.49044e-08, -1.57394e-07, 2.12449e-09, 1, 0.760918, 0.619885, -0.222124)
+
+[node name="Door BL" parent="Volskwagen Golf Mk1/Skeleton3D/Door BL" index="0"]
+material_override = ExtResource("2_yrv3q")
+
+[node name="Window BL" parent="Volskwagen Golf Mk1/Skeleton3D" index="13"]
+transform = Transform3D(1, 1.19124e-07, 2.13273e-07, -1.19334e-07, 1, -1.49044e-08, -1.57394e-07, 2.12449e-09, 1, 0.636626, 1.09346, -0.631021)
+
+[node name="Window BL" parent="Volskwagen Golf Mk1/Skeleton3D/Window BL" index="0"]
+material_override = ExtResource("3_xcwvs")
+
+[node name="Door BR" parent="Volskwagen Golf Mk1/Skeleton3D" index="14"]
+transform = Transform3D(1, -1.19124e-07, -2.13273e-07, 1.19334e-07, 1, -1.49044e-08, 1.57394e-07, 2.12449e-09, 1, -0.760918, 0.619885, -0.222124)
+
+[node name="Door BR" parent="Volskwagen Golf Mk1/Skeleton3D/Door BR" index="0"]
+material_override = ExtResource("2_yrv3q")
+
+[node name="Window BR" parent="Volskwagen Golf Mk1/Skeleton3D" index="15"]
+transform = Transform3D(1, -1.19124e-07, -2.13273e-07, 1.19334e-07, 1, -1.49044e-08, 1.57394e-07, 2.12449e-09, 1, -0.636626, 1.09346, -0.631021)
+
+[node name="Window BR" parent="Volskwagen Golf Mk1/Skeleton3D/Window BR" index="0"]
+material_override = ExtResource("3_xcwvs")
+
+[node name="Body_2" parent="Volskwagen Golf Mk1/Skeleton3D/Body_2" index="0"]
+material_override = ExtResource("2_yrv3q")
+
+[node name="Interior" parent="Volskwagen Golf Mk1/Skeleton3D/Interior" index="0"]
+material_override = SubResource("StandardMaterial3D_jm5mp")
+
+[node name="Windshield" parent="Volskwagen Golf Mk1/Skeleton3D" index="21"]
+transform = Transform3D(1.01454, 0, 0, 0, 1.01454, 0, 0, 0, 1.01454, 0.0156707, 1.11982, 0.62315)
+
+[node name="Windshield" parent="Volskwagen Golf Mk1/Skeleton3D/Windshield" index="0"]
+material_override = ExtResource("3_xcwvs")
