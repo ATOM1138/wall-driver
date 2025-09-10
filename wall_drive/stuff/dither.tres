@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bf8w5yxw6oldu"]
+
+[ext_resource type="Shader" uid="uid://mcfcidymq56r" path="res://stuff/Base.gdshader" id="1_uoxev"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_uoxev")
+shader_parameter/use_nearest = true
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 1.0
+shader_parameter/emission_color = Color(1, 1, 1, 1)
+shader_parameter/shading_strength = 0.9
+shader_parameter/jitter_amount = 5.0
+shader_parameter/jitter_speed = 5.0
+shader_parameter/jitter_scale = 5.0
+shader_parameter/shimmer_strength = 0.0
+shader_parameter/shimmer_speed = 1.0
+shader_parameter/shimmer_freq = 1.0
+shader_parameter/shimmer_offset = 0.0
+shader_parameter/shimmer_color = Color(1, 1, 1, 1)
+shader_parameter/dither_scale = 1.0

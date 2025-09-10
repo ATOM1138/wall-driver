@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cgk761ence4t4"]
+
+[ext_resource type="Shader" uid="uid://mcfcidymq56r" path="res://stuff/Base.gdshader" id="1_ls4dj"]
+[ext_resource type="Texture2D" uid="uid://4nk5nvcn874n" path="res://stuff/brick-cinder-03.png" id="2_gv4kx"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_ls4dj")
+shader_parameter/base_tex = ExtResource("2_gv4kx")
+shader_parameter/use_nearest = true
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 4.75e-08
+shader_parameter/emission_color = Color(0, 1, 1, 1)
+shader_parameter/shading_strength = 1.0
+shader_parameter/jitter_amount = 0.003
+shader_parameter/jitter_speed = 0.003
+shader_parameter/jitter_scale = 0.01
+shader_parameter/shimmer_strength = 0.0
+shader_parameter/shimmer_speed = 3.806
+shader_parameter/shimmer_freq = 1.644
+shader_parameter/shimmer_offset = 0.444
+shader_parameter/shimmer_color = Color(0, 0, 1, 1)
