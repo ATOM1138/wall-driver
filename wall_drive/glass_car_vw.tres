@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ulhhv4h1x4q" path="res://stuff/Window FL_Bake1_PBR_Diffuse.png" id="1_qlwtt"]
 
 [resource]
+render_priority = 1
 transparency = 1
 blend_mode = 1
 cull_mode = 2

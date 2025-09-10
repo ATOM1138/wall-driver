@@ -1,0 +1,34 @@
+# Blender 4.5.3 LTS MTL File: 'colider_vw.blend'
+# www.blender.org
+
+newmtl Body.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/Body_BaseColor.png
+map_Ns Textures/Body_Roughness.png
+map_refl Textures/Body_Metallic.png
+map_Bump -bm 1.000000 Textures/Body_Normal.png
+
+newmtl Lights.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/Body_BaseColor.png
+map_Ke Textures/Body_BaseColor.png
+
+newmtl SBM_Paint.005
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.799103 0.234550 0.000000
+Ks 0.431818 0.431818 0.431818
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3

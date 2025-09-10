@@ -140,11 +140,6 @@ offset_bottom = 652.0
 material_override = ExtResource("7_g8uvg")
 mesh = SubResource("CylinderMesh_cde87")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18265, 0, 0)
-material_override = ExtResource("2_bjes6")
-mesh = SubResource("CylinderMesh_cde87")
-
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46633, 0, 0)
 material_override = ExtResource("7_g8uvg")
