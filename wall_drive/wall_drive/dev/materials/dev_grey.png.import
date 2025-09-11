@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i5cdvl04bvf0"
-path.s3tc="res://.godot/imported/grate_01_black.png-fd8e2cb10fdb39ddec8e17d38e995473.s3tc.ctex"
+uid="uid://dceomiex2uqyq"
+path.s3tc="res://.godot/imported/dev_grey.png-98ad01813e774212db94b9beaf2bc038.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://stuff/textures/grate_01_black.png"
-dest_files=["res://.godot/imported/grate_01_black.png-fd8e2cb10fdb39ddec8e17d38e995473.s3tc.ctex"]
+source_file="res://wall_drive/dev/materials/dev_grey.png"
+dest_files=["res://.godot/imported/dev_grey.png-98ad01813e774212db94b9beaf2bc038.s3tc.ctex"]
 
 [params]
 

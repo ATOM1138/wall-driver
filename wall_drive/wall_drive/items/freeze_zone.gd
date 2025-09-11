@@ -19,7 +19,6 @@ func set_freeze(frozen : bool):
 
 func _physics_process(delta: float) -> void:
 	position.x = sin(float(Engine.get_frames_drawn() % 2048) / 2048.0) * 8
-	print(float(Engine.get_frames_drawn() % 256) / 256.0)
 	
 	if Input.is_action_just_pressed("walk_grab"):
 		set_freeze(true)

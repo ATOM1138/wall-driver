@@ -35,9 +35,10 @@ target_position = Vector3(0, 0, -2)
 collision_mask = 0
 hit_back_faces = false
 
-[node name="WalkManager" type="Node" parent="." node_paths=PackedStringArray("camera_pivot", "player")]
+[node name="WalkManager" type="Node" parent="." node_paths=PackedStringArray("camera_pivot", "camera", "player")]
 script = ExtResource("2_85r1v")
 camera_pivot = NodePath("../CameraPivot")
+camera = NodePath("../CameraPivot/Camera3D")
 player = NodePath("..")
 
 [node name="HoldManager" type="Node" parent="." node_paths=PackedStringArray("hold_marker", "hold_ray", "ray_exeptions")]

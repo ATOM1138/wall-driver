@@ -14,6 +14,7 @@ class_name WalkManager
 
 var pitch: float = 0.0
 @export var camera_pivot: Node3D
+@export var camera : Camera3D
 
 @export var player: Player
 
@@ -75,7 +76,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		# Yaw
 		player.rotate_y(-event.relative.x * mouse_sensitivity)
+		camera.rotation.x = clamp(camera.rotation.x - event.relative.y * mouse_sensitivity, deg_to_rad(-80), deg_to_rad(80))
 
 		# Pitch
-		pitch = clamp(pitch - event.relative.y * mouse_sensitivity, deg_to_rad(-80), deg_to_rad(80))
-		camera_pivot.rotation.x = pitch
+		#pitch = clamp(pitch - event.relative.y * mouse_sensitivity, deg_to_rad(-80), deg_to_rad(80))
+		#camera_pivot.rotation.x = pitch

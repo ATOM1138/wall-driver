@@ -13,5 +13,6 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if hold_ray.get_collider():
-		print(hold_ray.get_collider().name)
+	pass
+	#if hold_ray.get_collider():
+		#print(hold_ray.get_collider().name)

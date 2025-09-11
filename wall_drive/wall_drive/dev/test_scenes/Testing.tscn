@@ -1,13 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://eon7rwn7ue8e"]
+[gd_scene load_steps=22 format=3 uid="uid://eon7rwn7ue8e"]
 
 [ext_resource type="PackedScene" uid="uid://ci80ckqmvts7q" path="res://wall_drive/player/Player.tscn" id="1_njgoq"]
 [ext_resource type="Material" uid="uid://4eigj21tnp7r" path="res://wall_drive/dev/materials/dev_white.tres" id="2_bjes6"]
 [ext_resource type="Texture2D" uid="uid://bq3iq1ajjbwv6" path="res://stuff/dither_at_stars.png" id="3_0yuij"]
 [ext_resource type="Script" uid="uid://6chu0a0omr8w" path="res://wall_drive/items/freeze_zone.gd" id="3_bjes6"]
-[ext_resource type="Shader" uid="uid://dv43w7s23pth7" path="res://stuff/cam_fog.gdshader" id="6_cde87"]
+[ext_resource type="Shader" path="res://stuff/cam_fog.gdshader" id="6_cde87"]
 [ext_resource type="Material" uid="uid://pp27acp27ait" path="res://wall_drive/dev/materials/dev_trans_blue.tres" id="7_g8uvg"]
-[ext_resource type="PackedScene" uid="uid://cv4p8sj6idswm" path="res://volkswagen_golf_mk_1_game.tscn" id="7_jemel"]
-[ext_resource type="PackedScene" uid="uid://bl8qkj1wkw13m" path="res://stuff/at_barrier_3.tscn" id="8_jemel"]
+[ext_resource type="PackedScene" path="res://stuff/at_barrier_3.tscn" id="8_jemel"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cde87"]
 size = Vector2(4, 4)
@@ -144,8 +143,6 @@ mesh = SubResource("CylinderMesh_cde87")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46633, 0, 0)
 material_override = ExtResource("7_g8uvg")
 mesh = SubResource("CylinderMesh_cde87")
-
-[node name="Volkswagen Golf Mk1_game" parent="." instance=ExtResource("7_jemel")]
 
 [node name="barrier stuff" type="Node3D" parent="."]
 
