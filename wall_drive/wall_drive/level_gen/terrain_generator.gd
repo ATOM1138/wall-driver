@@ -1,6 +1,6 @@
 @tool
 extends Node
-class_name TerrainGenerator
+class_name TerrainGenerator_seroen
 
 @export_tool_button("Generate Terrain") var ter_gen = generate_terrain
 @export_tool_button("Wipe Terrain") var ter_wipe = wipe_terrain
