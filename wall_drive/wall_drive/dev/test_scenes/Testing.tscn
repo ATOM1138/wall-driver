@@ -4,10 +4,10 @@
 [ext_resource type="Material" uid="uid://4eigj21tnp7r" path="res://wall_drive/dev/materials/dev_white.tres" id="2_bjes6"]
 [ext_resource type="Texture2D" uid="uid://bq3iq1ajjbwv6" path="res://stuff/dither_at_stars.png" id="3_0yuij"]
 [ext_resource type="Script" uid="uid://6chu0a0omr8w" path="res://wall_drive/items/freeze_zone.gd" id="3_bjes6"]
-[ext_resource type="Shader" uid="uid://dv43w7s23pth7" path="res://stuff/cam_fog.gdshader" id="6_cde87"]
+[ext_resource type="Shader" path="res://stuff/cam_fog.gdshader" id="6_cde87"]
 [ext_resource type="Material" uid="uid://pp27acp27ait" path="res://wall_drive/dev/materials/dev_trans_blue.tres" id="7_g8uvg"]
 [ext_resource type="PackedScene" uid="uid://cv4p8sj6idswm" path="res://Criket_carrier.tscn" id="7_jemel"]
-[ext_resource type="PackedScene" uid="uid://bl8qkj1wkw13m" path="res://stuff/at_barrier_3.tscn" id="8_jemel"]
+[ext_resource type="PackedScene" path="res://stuff/at_barrier_3.tscn" id="8_jemel"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cde87"]
 size = Vector2(4, 4)

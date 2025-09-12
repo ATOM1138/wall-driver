@@ -12,6 +12,11 @@ class_name TerrainGenerator_at_2_old
 @export var terrain_height: float = 50.0
 @export var terrain_material: Material
 
+@export_tool_button("Generate Terrain") var ter_gen = generate_terrain
+
+func _ready() -> void:
+	generate_terrain()
+
 
 func wipe_terrain():
 	if ground_parent:
