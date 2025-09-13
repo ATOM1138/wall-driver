@@ -17,7 +17,7 @@ func wipe_world():
 func _process(delta: float) -> void:
 	if wall_generator:
 		wall_generator.update_wall()
-	if terrain_generator:
+	if terrain_generator and wall_generator.player_node.position.z - wall_generator.segments[len(wall_generator.segments) - 1].exit_marker.global_position.z > (terrain_generator.load_radius_chunks + 1) * terrain_generator.chunk_size:
 		if wall_generator:
 			terrain_generator.segments_pos = wall_generator.get_segment_pos()
 		

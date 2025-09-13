@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwp6juxniwolr"]
+[gd_scene load_steps=13 format=3 uid="uid://bwp6juxniwolr"]
 
 [ext_resource type="PackedScene" uid="uid://cv4p8sj6idswm" path="res://Criket_carrier.tscn" id="1_0cjbk"]
 [ext_resource type="Script" uid="uid://cjd23tm2x3cl5" path="res://addons/gevp/scripts/gui.gd" id="2_1t546"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ci80ckqmvts7q" path="res://wall_drive/player/Player.tscn" id="5_spss2"]
 [ext_resource type="Script" uid="uid://8ax3ihdjxpnp" path="res://wall_drive/level_gen/wall_generator.gd" id="6_4s7fh"]
 [ext_resource type="PackedScene" uid="uid://dl2jtjf7cke1o" path="res://wall_drive/level_gen/wall_segments/test1/ws_test_1.tscn" id="7_7voat"]
-[ext_resource type="PackedScene" uid="uid://2qmdgkqan4vj" path="res://wall_drive/level_gen/wall_segments/ws_test_2.tscn" id="8_qsbqi"]
-[ext_resource type="PackedScene" uid="uid://f01te3v6rti0" path="res://wall_drive/level_gen/wall_segments/ws_test_3.tscn" id="9_c71cq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yjdbh"]
 sky_top_color = Color(0.839006, 0, 0.183986, 1)
@@ -27,7 +25,7 @@ glow_enabled = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ig2lf"]
 frequency = 0.005
-offset = Vector3(192, 192, 0)
+offset = Vector3(0, 128, 0)
 fractal_type = 2
 
 [node name="Level" type="Node3D"]
@@ -85,7 +83,7 @@ script = ExtResource("6_4s7fh")
 player_node = NodePath("../../Player")
 load_distance = 256.0
 unload_distance = 128.0
-segment_scenes = Array[PackedScene]([ExtResource("7_7voat"), ExtResource("8_qsbqi"), ExtResource("9_c71cq")])
+segment_scenes = Array[PackedScene]([ExtResource("7_7voat")])
 
 [node name="TerrainGenerator" type="Node3D" parent="WorldGenerator" node_paths=PackedStringArray("ground_parent", "player_node", "wall_generator")]
 script = ExtResource("3_3ehih")
@@ -96,4 +94,4 @@ wall_generator = NodePath("../WallGenerator")
 chunk_size = 64
 terrain_height = 16.0
 terrain_material = ExtResource("4_oqd67")
-segments_pos = Array[Vector3]([Vector3(0, 8, 0), Vector3(-24, 8, -16), Vector3(0, 8, -40), Vector3(0, 8, -64), Vector3(0, 8, -80), Vector3(24, 8, -96), Vector3(24, 8, -120), Vector3(0, 8, -136), Vector3(0, 8, -160), Vector3(24, 8, -176), Vector3(0, 8, -200), Vector3(-24, 8, -224), Vector3(-48, 8, -248), Vector3(-72, 8, -272)])
+segments_pos = Array[Vector3]([Vector3(0, 8, 0), Vector3(0, 8, -16), Vector3(0, 8, -32), Vector3(0, 8, -48), Vector3(0, 8, -64), Vector3(0, 8, -80), Vector3(0, 8, -96), Vector3(0, 8, -112), Vector3(0, 8, -128), Vector3(0, 8, -144), Vector3(0, 8, -160), Vector3(0, 8, -176), Vector3(0, 8, -192), Vector3(0, 8, -208), Vector3(0, 8, -224), Vector3(0, 8, -240), Vector3(0, 8, -256)])

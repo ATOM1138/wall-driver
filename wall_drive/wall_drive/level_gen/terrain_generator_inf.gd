@@ -99,19 +99,37 @@ func generate_chunk(chunk_coords: Vector2) -> Array:
 	
 	noise.offset = Vector3(world_chunk_coords.x, world_chunk_coords.y, 0)
 	
-	var modify_data := PackedFloat32Array()
-	for segment_i in len(wall_generator.segments):
-		var segment : WallSegment = wall_generator.segments[segment_i]
-		
-		var segment_pos : Vector3 = segments_pos[segment_i]
-		for modifier in segment.terrain_modifiers:
-			print(modifier.offset + Vector2(segment_pos.x, segment_pos.z))
-	
 	var height_data := PackedFloat32Array()
 	for z in range(chunk_size + 1):
 		for x in range(chunk_size + 1):
 			height_data.append(noise.get_noise_2d(x, z) * terrain_height)
-
+	
+	for segment_i in len(wall_generator.segments):
+		var segment : WallSegment = wall_generator.segments[segment_i]
+		var segment_pos := segments_pos[segment_i]
+		var segments_pos_2d := Vector2(segment_pos.x, segment_pos.z)
+		for modifier in segment.terrain_modifiers:
+			var img_rect := Rect2()
+			img_rect.position = modifier.offset + segments_pos_2d
+			img_rect.size = modifier.modify_map.get_size()
+			
+			var chunk_rect := Rect2()
+			chunk_rect.position = world_chunk_coords - Vector2(1, 1)
+			chunk_rect.size = Vector2(chunk_size + 2, chunk_size + 2)
+			
+			if chunk_rect.intersects(img_rect):
+				var map_img := modifier.modify_map.get_image()
+				img_rect.position -= world_chunk_coords
+				#print(img_rect.position)
+				
+				for x in range(img_rect.position.x, img_rect.end.x):
+					if x < 0 or x > chunk_size:
+						continue
+					for z in range(img_rect.position.y, img_rect.end.y):
+						if z < 0 or z > chunk_size:
+							continue
+						height_data[(z * (chunk_size + 1)) + x] = lerp(height_data[(z * (chunk_size + 1)) + x], modifier.height + 8, map_img.get_pixel(x - img_rect.position.x, z - img_rect.position.y).r)
+	
 	var st := SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 
