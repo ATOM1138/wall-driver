@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://dl2jtjf7cke1o"]
+
+[ext_resource type="Script" uid="uid://chk4doun22q5j" path="res://wall_drive/level_gen/wall_segment.gd" id="1_ma0wc"]
+[ext_resource type="Script" uid="uid://b7dwgypdeylw2" path="res://wall_drive/level_gen/terrain_modifer.gd" id="2_2024c"]
+[ext_resource type="Texture2D" uid="uid://bwro3h4jt0dye" path="res://wall_drive/level_gen/wall_segments/test1/map.png" id="3_2024c"]
+[ext_resource type="Material" uid="uid://b06pxvouxuplo" path="res://wall_drive/dev/placeholder/concrete_temp.tres" id="3_h33we"]
+
+[sub_resource type="Resource" id="Resource_uxhpb"]
+script = ExtResource("2_2024c")
+modify_map = ExtResource("3_2024c")
+height = -1.0
+offset = Vector2(-4, 0)
+metadata/_custom_type_script = "uid://b7dwgypdeylw2"
+
+[sub_resource type="BoxMesh" id="BoxMesh_vxecx"]
+material = ExtResource("3_h33we")
+size = Vector3(8, 8, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vxecx"]
+size = Vector3(8, 8, 16)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vxecx"]
+material = ExtResource("3_h33we")
+flip_faces = true
+size = Vector2(16, 512)
+orientation = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cgpkk"]
+size = Vector3(2, 512, 16)
+
+[node name="WSTest1" type="Node3D" node_paths=PackedStringArray("entrance_marker", "exit_marker")]
+script = ExtResource("1_ma0wc")
+entrance_marker = NodePath("Marker3D")
+exit_marker = NodePath("Marker3D2")
+terrain_modifiers = Array[ExtResource("2_2024c")]([SubResource("Resource_uxhpb")])
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="Marker3D2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+mesh = SubResource("BoxMesh_vxecx")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+shape = SubResource("BoxShape3D_vxecx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 256, 0)
+mesh = SubResource("PlaneMesh_vxecx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 256, 0)
+shape = SubResource("BoxShape3D_cgpkk")

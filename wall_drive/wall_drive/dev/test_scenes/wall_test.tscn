@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctaqbhtcmx0n4"]
+
+[ext_resource type="Script" uid="uid://8ax3ihdjxpnp" path="res://wall_drive/level_gen/wall_generator.gd" id="1_xun38"]
+[ext_resource type="PackedScene" uid="uid://dl2jtjf7cke1o" path="res://wall_drive/level_gen/wall_segments/test1/ws_test_1.tscn" id="2_1thf3"]
+[ext_resource type="PackedScene" uid="uid://2qmdgkqan4vj" path="res://wall_drive/level_gen/wall_segments/ws_test_2.tscn" id="3_qd7yo"]
+[ext_resource type="PackedScene" uid="uid://f01te3v6rti0" path="res://wall_drive/level_gen/wall_segments/ws_test_3.tscn" id="4_qd7yo"]
+[ext_resource type="PackedScene" uid="uid://ci80ckqmvts7q" path="res://wall_drive/player/Player.tscn" id="5_jfy2x"]
+[ext_resource type="PackedScene" uid="uid://cv4p8sj6idswm" path="res://Criket_carrier.tscn" id="6_6rvgp"]
+[ext_resource type="Script" uid="uid://3suxcrodq0rc" path="res://wall_drive/level_gen/world_generator.gd" id="7_6rvgp"]
+
+[node name="WallTest" type="Node3D"]
+
+[node name="WallGenerator" type="Node3D" parent="." node_paths=PackedStringArray("player_node")]
+script = ExtResource("1_xun38")
+player_node = NodePath("../Player")
+load_distance = 128.0
+unload_distance = 256.0
+segment_scenes = Array[PackedScene]([ExtResource("2_1thf3"), ExtResource("3_qd7yo"), ExtResource("4_qd7yo")])
+
+[node name="Player" parent="." instance=ExtResource("5_jfy2x")]
+
+[node name="Hatchback" parent="." instance=ExtResource("6_6rvgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866026, 0.5, -0.5, -0.433013, 0.75, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldGenerator" type="Node3D" parent="." node_paths=PackedStringArray("wall_generator")]
+script = ExtResource("7_6rvgp")
+wall_generator = NodePath("../WallGenerator")

@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctl4uygxxc5y4"]
+[gd_scene load_steps=6 format=3 uid="uid://ctl4uygxxc5y4"]
 
 [ext_resource type="Script" uid="uid://dmx6ee78c4ebk" path="res://wall_drive/level_gen/terrain_generator_inf.gd" id="1_lyd4u"]
+[ext_resource type="Material" uid="uid://crftki54jckjk" path="res://wall_drive/dev/placeholder/groud_temp.tres" id="2_ee0q4"]
 [ext_resource type="PackedScene" uid="uid://ci80ckqmvts7q" path="res://wall_drive/player/Player.tscn" id="2_iclln"]
 [ext_resource type="PackedScene" uid="uid://cv4p8sj6idswm" path="res://Criket_carrier.tscn" id="3_lyd4u"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lyd4u"]
 frequency = 0.005
-offset = Vector3(-2048, -2048, 0)
+offset = Vector3(192, 192, 0)
 fractal_type = 2
 
 [node name="TerrainTest" type="Node3D"]
@@ -18,6 +19,7 @@ ground_parent = NodePath("../Terrain")
 player_node = NodePath("../Player")
 chunk_size = 64
 terrain_height = 16.0
+terrain_material = ExtResource("2_ee0q4")
 
 [node name="Terrain" type="Node3D" parent="."]
 

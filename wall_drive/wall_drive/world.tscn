@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwp6juxniwolr"]
+
+[ext_resource type="PackedScene" uid="uid://cv4p8sj6idswm" path="res://Criket_carrier.tscn" id="1_0cjbk"]
+[ext_resource type="Script" uid="uid://cjd23tm2x3cl5" path="res://addons/gevp/scripts/gui.gd" id="2_1t546"]
+[ext_resource type="Script" uid="uid://dmx6ee78c4ebk" path="res://wall_drive/level_gen/terrain_generator_inf.gd" id="3_3ehih"]
+[ext_resource type="Script" uid="uid://3suxcrodq0rc" path="res://wall_drive/level_gen/world_generator.gd" id="4_1t546"]
+[ext_resource type="Material" uid="uid://crftki54jckjk" path="res://wall_drive/dev/placeholder/groud_temp.tres" id="4_oqd67"]
+[ext_resource type="PackedScene" uid="uid://ci80ckqmvts7q" path="res://wall_drive/player/Player.tscn" id="5_spss2"]
+[ext_resource type="Script" uid="uid://8ax3ihdjxpnp" path="res://wall_drive/level_gen/wall_generator.gd" id="6_4s7fh"]
+[ext_resource type="PackedScene" uid="uid://dl2jtjf7cke1o" path="res://wall_drive/level_gen/wall_segments/test1/ws_test_1.tscn" id="7_7voat"]
+[ext_resource type="PackedScene" uid="uid://2qmdgkqan4vj" path="res://wall_drive/level_gen/wall_segments/ws_test_2.tscn" id="8_qsbqi"]
+[ext_resource type="PackedScene" uid="uid://f01te3v6rti0" path="res://wall_drive/level_gen/wall_segments/ws_test_3.tscn" id="9_c71cq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yjdbh"]
+sky_top_color = Color(0.839006, 0, 0.183986, 1)
+sky_horizon_color = Color(0.563594, 0.346093, 0.383089, 1)
+ground_horizon_color = Color(0.563594, 0.346093, 0.383089, 1)
+
+[sub_resource type="Sky" id="Sky_7ec4y"]
+sky_material = SubResource("ProceduralSkyMaterial_yjdbh")
+
+[sub_resource type="Environment" id="Environment_x61ij"]
+background_mode = 2
+sky = SubResource("Sky_7ec4y")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ig2lf"]
+frequency = 0.005
+offset = Vector3(192, 192, 0)
+fractal_type = 2
+
+[node name="Level" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.219846, -0.858936, 0.462489, 0, 0.474088, 0.880477, -0.975535, 0.19357, -0.104226, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x61ij")
+
+[node name="Hatchback" parent="." instance=ExtResource("1_0cjbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7293, 8.26246, -20.3474)
+
+[node name="GUI" type="Control" parent="." node_paths=PackedStringArray("vehicle")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1t546")
+vehicle = NodePath("../Hatchback")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Speed" type="Label" parent="GUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="RPM" type="Label" parent="GUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Gear" type="Label" parent="GUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("5_spss2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0)
+
+[node name="WorldGenerator" type="Node3D" parent="." node_paths=PackedStringArray("wall_generator", "terrain_generator")]
+script = ExtResource("4_1t546")
+wall_generator = NodePath("WallGenerator")
+terrain_generator = NodePath("TerrainGenerator")
+
+[node name="WallGenerator" type="Node3D" parent="WorldGenerator" node_paths=PackedStringArray("player_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+script = ExtResource("6_4s7fh")
+player_node = NodePath("../../Player")
+load_distance = 256.0
+unload_distance = 128.0
+segment_scenes = Array[PackedScene]([ExtResource("7_7voat"), ExtResource("8_qsbqi"), ExtResource("9_c71cq")])
+
+[node name="TerrainGenerator" type="Node3D" parent="WorldGenerator" node_paths=PackedStringArray("ground_parent", "player_node", "wall_generator")]
+script = ExtResource("3_3ehih")
+noise = SubResource("FastNoiseLite_ig2lf")
+ground_parent = NodePath("../../Terrain")
+player_node = NodePath("../../Player")
+wall_generator = NodePath("../WallGenerator")
+chunk_size = 64
+terrain_height = 16.0
+terrain_material = ExtResource("4_oqd67")
+segments_pos = Array[Vector3]([Vector3(0, 8, 0), Vector3(-24, 8, -16), Vector3(0, 8, -40), Vector3(0, 8, -64), Vector3(0, 8, -80), Vector3(24, 8, -96), Vector3(24, 8, -120), Vector3(0, 8, -136), Vector3(0, 8, -160), Vector3(24, 8, -176), Vector3(0, 8, -200), Vector3(-24, 8, -224), Vector3(-48, 8, -248), Vector3(-72, 8, -272)])

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="wall_drive"
-run/main_scene="uid://eon7rwn7ue8e"
+run/main_scene="uid://bwp6juxniwolr"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

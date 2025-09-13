@@ -9,6 +9,7 @@ class_name TerrainGenerator
 @export var noise: FastNoiseLite
 @export var ground_parent: Node3D
 @export var player_node: Node3D
+@export var wall_generator : WallGenerator
 @export var chunk_size: int = 256
 @export var terrain_height: float = 50.0
 @export var terrain_material: Material
@@ -19,9 +20,12 @@ class_name TerrainGenerator
 var active_chunks: Dictionary = {}
 
 var gen_thread := Thread.new()
+## Only an export because tool script weirdness, pls dont touch
+@export var segments_pos : Array[Vector3]
 
 
 func _ready() -> void:
+	wipe_terrain()
 	generate_initial_chunks()
 
 
@@ -60,6 +64,9 @@ func get_player_chunk_coords() -> Vector2:
 
 # generate OR remove
 func update_chunks():
+	if player_node == null:
+		return
+	
 	var player_chunk = get_player_chunk_coords()
 	
 	# Remove 
@@ -88,17 +95,22 @@ func update_chunks():
 
 # Generate a single chunk a t ppos 
 func generate_chunk(chunk_coords: Vector2) -> Array:
-	var start_x = int(chunk_coords.x) * chunk_size
-	var start_z = int(chunk_coords.y) * chunk_size
-	var end_x = start_x + chunk_size
-	var end_z = start_z + chunk_size
-	
 	var world_chunk_coords := chunk_coords * chunk_size
 	
 	noise.offset = Vector3(world_chunk_coords.x, world_chunk_coords.y, 0)
 	
-	#var img = noise.get_image(chunk_size + 1, chunk_size + 1)
-	#img.convert(Image.Format.FORMAT_RF)
+	var modify_data := PackedFloat32Array()
+	for segment_i in len(wall_generator.segments):
+		var segment : WallSegment = wall_generator.segments[segment_i]
+		
+		var segment_pos : Vector3 = segments_pos[segment_i]
+		for modifier in segment.terrain_modifiers:
+			print(modifier.offset + Vector2(segment_pos.x, segment_pos.z))
+	
+	var height_data := PackedFloat32Array()
+	for z in range(chunk_size + 1):
+		for x in range(chunk_size + 1):
+			height_data.append(noise.get_noise_2d(x, z) * terrain_height)
 
 	var st := SurfaceTool.new()
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -106,10 +118,10 @@ func generate_chunk(chunk_coords: Vector2) -> Array:
 	for z in range(0, chunk_size):
 		for x in range(0, chunk_size):
 			# Sample noise
-			var h1 = noise.get_noise_2d(x, z) * terrain_height
-			var h2 = noise.get_noise_2d(x + 1, z) * terrain_height
-			var h3 = noise.get_noise_2d(x, z + 1) * terrain_height
-			var h4 = noise.get_noise_2d(x + 1, z + 1) * terrain_height
+			var h1 = height_data[(z * (chunk_size + 1)) + x]
+			var h2 = height_data[(z * (chunk_size + 1)) + x + 1]
+			var h3 = height_data[((z + 1) * (chunk_size + 1)) + x]
+			var h4 = height_data[((z + 1) * (chunk_size + 1)) + x + 1]
 
 			var v1 = Vector3(x,     h1, z)
 			var v2 = Vector3(x + 1, h2, z)
@@ -117,24 +129,25 @@ func generate_chunk(chunk_coords: Vector2) -> Array:
 			var v4 = Vector3(x + 1, h4, z + 1)
 
 			# First triangle
-			var normal = get_triangle_normal(v1, v2, v3)
-			st.set_normal(normal)
+			#var normal = get_triangle_normal(v1, v2, v3)
+			#st.set_normal(normal)
 			st.add_vertex(v1)
-			st.set_normal(normal)
+			#st.set_normal(normal)
 			st.add_vertex(v2)
-			st.set_normal(normal)
+			#st.set_normal(normal)
 			st.add_vertex(v3)
 			# Second triangle
-			normal = get_triangle_normal(v2, v4, v3)
-			st.set_normal(normal)
+			#normal = get_triangle_normal(v2, v4, v3)
+			#st.set_normal(normal)
 			st.add_vertex(v2)
-			st.set_normal(normal)
+			#st.set_normal(normal)
 			st.add_vertex(v4)
-			st.set_normal(normal)
+			#st.set_normal(normal)
 			st.add_vertex(v3)
 
 	#st.generate_normals()
 	st.index()
+	st.generate_normals()
 	var mesh := st.commit()
 
 	var mi := MeshInstance3D.new()
@@ -153,13 +166,7 @@ func generate_chunk(chunk_coords: Vector2) -> Array:
 	var shape := HeightMapShape3D.new()
 	shape.map_width = chunk_size + 1
 	shape.map_depth = chunk_size + 1
-	var local_height := PackedFloat32Array()
-	local_height.resize((chunk_size + 1) * (chunk_size + 1))
-	for z in range(chunk_size + 1):
-		for x in range(chunk_size + 1):
-			local_height[z * (chunk_size + 1) + x] = noise.get_noise_2d(x, z) * terrain_height
-	shape.map_data = local_height
-	#shape.update_map_data_from_image(img, 0, 16)
+	shape.map_data = height_data
 
 	var col := CollisionShape3D.new()
 	col.shape = shape
@@ -182,9 +189,3 @@ func get_triangle_normal(a, b, c):
 	var side2 = c - a
 	var normal = side1.cross(side2)
 	return -normal
-
-
-# call when schmove
-func _process(delta):
-	if player_node:
-		update_chunks()
